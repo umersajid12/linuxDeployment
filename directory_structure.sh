@@ -10,7 +10,8 @@ if [ ! -x "$wget" ]; then
   echo "ERROR: No wget." >&2
   exit 1
 fi
-if ! cd "$TMP_DIR"; then
+if [ ! -d "$TMP_DIR" ];   
+then
   echo "ERROR: can't access working directory ($WORKING_DIR)" >&2
   echo "Going to make new tmp Directory now" >&2
   mkdir -p "$TMP_DIR"
